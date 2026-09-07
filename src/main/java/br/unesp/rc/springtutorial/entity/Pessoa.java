@@ -23,7 +23,9 @@ public class Pessoa {
         this.endereco = new ArrayList<>();
     }
 
-    
+    public void setEndereco(Endereco endereco) {
+        this.endereco.add(endereco);
+    }
 
     
 }
