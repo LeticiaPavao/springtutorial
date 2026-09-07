@@ -3,6 +3,7 @@ package br.unesp.rc.springtutorial.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Embeddable;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
