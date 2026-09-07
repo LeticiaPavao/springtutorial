@@ -18,6 +18,7 @@ public class Endereco {
     private String cidade;
     private String estado;
 
-    publi
+    public Endereco(){
+    }
     
 }
