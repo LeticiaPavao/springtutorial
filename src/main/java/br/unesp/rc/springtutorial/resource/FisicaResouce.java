@@ -19,6 +19,8 @@ import br.unesp.rc.springtutorial.entity.mapper.FisicaMapper;
 import br.unesp.rc.springtutorial.service.FisicaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
@@ -27,6 +29,11 @@ public class FisicaResouce {
 
     @Autowired
     private FisicaService fisicaService;
+
+    @GetMapping("/")
+    public List<Fisica> getAllFisica() {
+        return fisicaService.findAll();
+    }
 
     @Operation(summary = "Retorna uma pessoa pelo CPF")
     @ApiResponses(value = {
@@ -49,16 +56,6 @@ public class FisicaResouce {
                 content = @Content
             )
     })
-    @GetMapping("/{cpf}")
-    public Fisica getFisicaByCpf(@PathVariable(value = "cpf") String cpf) {
-        Fisica fisica = fisicaService.findByCpf(cpf);
-        return fisica;
-    }
-
-    @GetMapping("/")
-    public List<Fisica> getAllFisica() {
-        return fisicaService.findAll();
-    }
 
     @GetMapping("/{cpf}")
     public Fisica getFisicaByCpf(@PathVariable(value = "cpf") String cpf) {

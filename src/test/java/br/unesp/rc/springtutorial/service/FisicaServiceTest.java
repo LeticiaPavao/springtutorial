@@ -8,10 +8,12 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import br.unesp.rc.springtutorial.entity.Fisica;
 import br.unesp.rc.springtutorial.utils.InstanceGenerator;
 
+@SpringBootTest
 public class FisicaServiceTest {
 
     private Fisica entity;
